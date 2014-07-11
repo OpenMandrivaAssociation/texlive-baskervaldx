@@ -6,7 +6,7 @@
 # catalog-version 1.04
 Name:		texlive-baskervaldx
 Version:	1.04
-Release:	1
+Release:	2
 Summary:	Extension and modification of BaskervaldADF with LaTeX support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/baskervaldx
