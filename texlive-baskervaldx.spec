@@ -1,12 +1,12 @@
 Name:		texlive-baskervaldx
-Version:	1.072
-Release:	2
+Version:	57080
+Release:	1
 Summary:	Extension and modification of BaskervaldADF with LaTeX support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/baskervaldx
 License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.r57080.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.doc.r57080.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -19,12 +19,12 @@ oldstyle figures in all shapes. Includes OpenType and
 PostScript fonts, as well as LaTeX support files.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -40,7 +40,7 @@ PostScript fonts, as well as LaTeX support files.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
