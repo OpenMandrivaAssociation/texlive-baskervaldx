@@ -1,6 +1,6 @@
 Name:		texlive-baskervaldx
-Version:	57080
-Release:	2
+Version:	69273
+Release:	1
 Summary:	Extension and modification of BaskervaldADF with LaTeX support
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/baskervaldx
