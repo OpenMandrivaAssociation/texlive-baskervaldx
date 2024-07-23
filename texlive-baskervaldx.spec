@@ -1,5 +1,5 @@
 Name:		texlive-baskervaldx
-Version:	69273
+Version:	71145
 Release:	1
 Summary:	Extension and modification of BaskervaldADF with LaTeX support
 Group:		Publishing
