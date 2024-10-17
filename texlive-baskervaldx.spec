@@ -3,7 +3,7 @@ Version:	71145
 Release:	1
 Summary:	Extension and modification of BaskervaldADF with LaTeX support
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/baskervaldx
+URL:		https://www.ctan.org/tex-archive/fonts/baskervaldx
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.doc.r%{version}.tar.xz
