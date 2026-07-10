@@ -1,49 +1,25 @@
-Name:		texlive-baskervaldx
-Version:	71145
-Release:	1
+%global tl_name baskervaldx
+%global tl_revision 78931
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	1.08
+Release:	%{tl_revision}.1
 Summary:	Extension and modification of BaskervaldADF with LaTeX support
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/baskervaldx
-License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.doc.r%{version}.tar.xz
+License:	gpl2+ lppl1.3
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/baskervaldx.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-Extends and modifies the BaskervaldADF font (a Baskerville
-substitute) with more accented glyphs, with small caps and
-oldstyle figures in all shapes. Includes OpenType and
-PostScript fonts, as well as LaTeX support files.
+Extends and modifies the BaskervaldADF font (a Baskerville substitute)
+with more accented glyphs, with small caps and oldstyle figures in all
+shapes. Includes OpenType and PostScript fonts, as well as LaTeX support
+files.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/afm/public/baskervaldx
-%{_texmfdistdir}/fonts/enc/dvips/baskervaldx
-%{_texmfdistdir}/fonts/map/dvips/baskervaldx
-%{_texmfdistdir}/fonts/opentype/public/baskervaldx
-%{_texmfdistdir}/fonts/tfm/public/baskervaldx
-%{_texmfdistdir}/fonts/type1/public/baskervaldx
-%{_texmfdistdir}/fonts/vf/public/baskervaldx
-%{_texmfdistdir}/tex/latex/baskervaldx
-%doc %{_texmfdistdir}/doc/fonts/baskervaldx
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex doc %{buildroot}%{_texmfdistdir}
